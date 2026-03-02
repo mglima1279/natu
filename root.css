@@ -1,18 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 :root {
-  --cor-primaria: #558B2F;
-  --cor-secundaria: #8BC34A;
-  --cor-terciaria: #795548;
+  --cor-primaria: #4A7C59;
+  --cor-secundaria: #8FC0A9;
+  --cor-terciaria: #C8D5B9;
   
-  /* Tons Neutros */
-  --cor-fundo: #FDFDF9;
+  --cor-fundo: #FAF9F6;
   --cor-fundo-card: #FFFFFF;
-  --cor-texto: #333333;
+  --cor-texto: #3E4C42;
   --cor-texto-claro: #FFFFFF;
-  --cor-borda: #E0E0E0;
+  --cor-borda: #EAECE8;
 
-  /* Espaçamentos e Formas */
   --borda-raio: 12px;
   --sombra-padrao: 0 4px 10px rgba(0, 0, 0, 0.05); 
 }
@@ -138,7 +136,7 @@ header {
 }
 
 footer {
-  background-color: var(--cor-primaria);
+  background-color: var(--cor-terciaria);
   color: var(--cor-texto-claro);
   padding: 2.5rem 5%;
   margin-top: auto;

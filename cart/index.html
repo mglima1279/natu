@@ -6,6 +6,7 @@
     <title>Natu | Carrinho</title>
 
     <link rel="stylesheet" href="../root.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="../img/geral/nobgLogo.png" type="image/x-icon">
 </head>
 <body>
@@ -27,7 +28,65 @@
     </header>
 
     <main>
-        
+        <h1>Carrinho de Compras</h1>
+
+        <div class="mainDiv">
+            <div class="items">
+                <div class="itemDiv">
+                    <img src="../img/produtos/abacaxi.jpg" alt="Abacaxi">
+                    <div>
+                        <div class="itemNome">Abacaxi</div>
+                        <div class="itemPrecos">
+                            R$ <span>0,00</span> <span>und</span> 
+                            <input type="number" value="1" min="1">
+                            R$ <span>0,00</span>
+                        </div>
+                    </div>
+                    <i class="fa-regular fa-circle-xmark deletar"></i>
+                </div>
+            </div>
+
+            <div class="menuDiv">
+                <form>
+                    <div class="boxMenu">
+                        <div class="formDiv">CEP</div>
+                        <input type="text" inputmode="numeric" name="cep" id="cep" pattern="\d{8}" maxlength="8" required placeholder="Digite o Cep">
+                    </div>
+
+                    <div class="boxMenu">
+                        <div class="formDiv">VALOR TOTAL</div>
+                        <div class="linhaValor">R$ <span id="vTotal">0,00</span></div>
+
+                        <div class="formDiv mt">VALOR FRETE</div>
+                        <div class="linhaValor">R$ <span id="vFrete">5,00</span></div>
+                    </div>
+
+                    <div class="boxMenu">
+                        <div class="formDiv">TOTAL A PAGAR</div>
+                        <div class="linhaValor destaque">R$ <span id="vLiq">69,60</span></div>
+                    </div>
+
+                    <div class="boxMenu">
+                        <div class="formDiv">FORMA PAGAMENTO</div>
+                        <div class="radioContainer">
+                            <input type="radio" name="pag" id="pix" checked>
+                            <label for="pix"><i class="fa-brands fa-pix"></i> PIX</label>
+                        </div>
+                        <div class="radioContainer">
+                            <input type="radio" name="pag" id="debit">
+                            <label for="debit"><i class="fa-regular fa-credit-card"></i> DÉBITO</label>
+                        </div>
+                        <div class="radioContainer">
+                            <input type="radio" name="pag" id="cred">
+                            <label for="cred"><i class="fa-solid fa-credit-card"></i> CRÉDITO</label>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="Finalizar Compra">
+                    <button class="btnContinuar">Continuar Compra</button>
+                </form>
+            </div>
+        </div>
     </main>
 
     <footer>

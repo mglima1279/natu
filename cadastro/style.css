@@ -4,7 +4,7 @@ h1 {
 }
 
 form {
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-primaria);
     width: 100%;
     max-width: 700px;
     margin: 0 auto 3rem auto;
@@ -86,13 +86,12 @@ input[type="reset"] {
 
 /* Botão primário */
 input[type="submit"] {
-    background-color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
     color: var(--cor-texto-claro);
 }
 
 input[type="submit"]:hover {
-    background-color: #4a7c27;
-    transform: translateY(-2px);
+    filter: brightness(1.1);
 }
 
 /* Botão secundário */
@@ -103,7 +102,6 @@ input[type="reset"] {
 
 input[type="reset"]:hover {
     background-color: #7e7e7e;
-    transform: translateY(-2px);
 }
 
 /* Responsividade */
