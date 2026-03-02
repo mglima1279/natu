@@ -23,8 +23,9 @@
     margin-right: auto;
     width: 90%;
     display: grid;  
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    row-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, 260px);
+    row-gap: 2rem;
+    justify-content: center;
 }
 
 .itemCard {
@@ -36,8 +37,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.5rem;
   text-align: center;
   width: 240px;
+  height: 100%;
   transition: box-shadow 0.3s ease;
 }
 
@@ -49,12 +52,10 @@
   width: 130px;
   height: 130px;
   object-fit: contain;
-  margin-bottom: 1rem;
 }
 
 .itemCard h3 {
   color: var(--cor-texto);
-  font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
@@ -63,7 +64,6 @@
   color: var(--cor-texto);
   font-size: 0.85rem;
   opacity: 0.7;
-  margin-bottom: 1.5rem;
   line-height: 1.3;
 }
 
@@ -75,7 +75,7 @@
   color: var(--cor-texto);
   font-weight: 700;
   font-size: 1.15rem;
-  margin-bottom: 1.5rem;
+  margin-top: auto;
 }
 
 .itemCard button {
