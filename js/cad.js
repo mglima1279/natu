@@ -108,7 +108,9 @@ form.addEventListener("submit", (e)=>{
 })
 
 function localSaveUser(info){
-
+    info = JSON.stringify(info)
+    
+    localStorage.setItem("user", info)
 }
 
 function validarCPF(cpf) {
