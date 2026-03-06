@@ -7,6 +7,8 @@ const addressItems = document.querySelectorAll(".hiddenItem");
 let formExpanded = false;
 
 cepInput.addEventListener("input", () => {
+    const val = cepInput.value
+
     if (val.length == 8 && !isNaN(val)) {
         expandForm(val);
     } else if (val.length < 8 && formExpanded) {
