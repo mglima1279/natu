@@ -1,35 +1,50 @@
-const cepInput = document.getElementById("cep")
+import { app, getFirestore, setDoc, doc } from "./firebase/config.js"
 
-let formExpanded = false
+const db = getFirestore()
 
-const addressItems = document.querySelectorAll(".hiddenItem")
+const cepInput = document.getElementById("cep");
+const addressItems = document.querySelectorAll(".hiddenItem");
+let formExpanded = false;
 
-cepInput.addEventListener("input", ()=>{
-    const val = cepInput.value
-
-    if(val.length == 8 && !isNaN(val)){
-        expandForm(val)
-    } else if(val.length <= 7 && formExpanded){
-        colapseForm()
+cepInput.addEventListener("input", () => {
+    if (val.length == 8 && !isNaN(val)) {
+        expandForm(val);
+    } else if (val.length < 8 && formExpanded) {
+        collapseForm();
     }
-})
+});
 
-function expandForm(cep){
+function expandForm(cep) {
     fetch(wrapUrl(cep))
-    .then(res=>res.json())
-    .then(data=>{
-        console.log(data)
-    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.erro) {
+                alert("CEP não encontrado.");
+                collapseForm();
+                return;
+            }
+
+            addressItems[0].value = data.logradouro;
+
+            addressItems.forEach(el => {
+                el.classList.remove("hiddenItem")
+            });
+            formExpanded = true;
+        })
+        .catch(err => {
+            console.error("Erro na busca:", err);
+            collapseForm();
+        });
 }
 
-function colapseForm(){
-    addressItems.forEach(el=>{
-        el.style.display = "none"
-    })
+function collapseForm() {
+    addressItems.forEach(el => {
+        el.classList.add("hiddenItem");
+        el.value = "";
+    });
+    formExpanded = false;
 }
 
-function wrapUrl(cep){
-    return encodeURI(`viacep.com.br/ws/${cep}/json/`)
+function wrapUrl(cep) {
+    return `https://viacep.com.br/ws/${cep}/json/`;
 }
-
-//CONTINUA AQUI!!!!!
